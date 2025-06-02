@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Checkout</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover and order high-quality posture correctors with fast delivery. Our website offers easy checkout and responsive design.">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f2f5;
+      padding: 30px;
+    }
+    
+
+    .checkout-box {
+      max-width: 500px;
+      margin: auto;
+      background: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .info {
+      margin: 10px 0;
+      font-size: 18px;
+    }
+
+    .info span {
+      font-weight: bold;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 20px;
+      text-align: center;
+      width: 100%;
+      color: #ff0000;
+      text-decoration: none;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    .total {
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 20px;
+      color: #28a745;
+    }
+    form input, form textarea, form select {
+  width: 100%;
+  padding: 10px;
+  font-size: 15px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+  @media (max-width: 768px) {
+  .box {
+    padding: 20px;
+    margin: 10px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+}
+
+
+  form input,
+  form textarea,
+  form select {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .btn {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+
+  .product-img {
+    width: 100%;
+    max-width: 250px;
+  }
+
+/* Animation الدخول */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Keyframes */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* زرار فيه حركة */
+button:hover, .btn:hover {
+  transform: scale(1.05);
+  transition: 0.3s ease;
+}
+
+/* Smooth transition لكل العناصر */
+form input,
+form textarea,
+form select,
+button {
+  transition: all 0.3s ease;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: auto;
+}
+body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .product {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #eee;
+      padding: 15px 0;
+      flex-wrap: wrap;
+    }
+    .product img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      margin-right: 15px;
+    }
+    .product-info {
+      flex: 1;
+      display: flex;
+      align-items: center;
+    }
+    .product-name {
+      font-weight: bold;
+      margin-right: 10px;
+    }
+    .product-price {
+      color: #666;
+      font-size: 14px;
+    }
+    .product-qty {
+      margin: 10px 0;
+      font-size: 14px;
+    }
+    .line-total {
+      font-weight: bold;
+      color: green;
+      font-size: 16px;
+    }
+    .total {
+      text-align: right;
+      font-size: 20px;
+      font-weight: bold;
+      margin-top: 20px;
+      color: #1e90ff;
+    }
+    @media (max-width: 768px) {
+      .product-info {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .product img {
+        margin-bottom: 10px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="checkout-box" class="fade-in">
+     
+    <div class="container">
+      <h1>Your Selected Samples</h1>
+      <div id="productContainer"></div>
+      <div class="total">Total: $<span id="totalAmount">0.00</span></div>
+    </div>
+  
+
+    <a href="index.html" class="back-link">← Back to Remove</a>
+  </div>
+  <hr style="margin: 30px 0;">
+
+  <h3>🧍‍♂️ Customer Info</h3>
+  <form class="fade-in" action="https://formsubmit.co/mostafamms302@gmail.com" method="POST" id="orderForm" onsubmit="saveOrder()">
+    <input type="hidden" name="_next" value="https://mostafamahmoud13.github.io/111/thankyou-index.html">
+
+    <input type="hidden" name="Order_Summary" id="orderSummary">
+   
+    
+    
+    <!-- باقي عناصر الفورم زي الاسم، رقم التليفون، ... -->
+  
+    <label>Full Name</label><br>
+    <input type="text" name="name" required><br><br>
+  
+    <label>Email</label><br>
+    <input type="email" name="email" required><br><br>
+
+    <label>Phone Number</label><br>
+    <input type="tel" name="phone" required><br><br>
+
+        <label>Country</label><br>
+        <select required name="country">
+          <option value="" disabled selected>Select Country</option>
+          <option value="USA">🇺🇸 United States</option>
+          <option value="UK">🇬🇧 United Kingdom</option>
+          <option value="Canada">🇨🇦 Canada</option>
+          <option value="Germany">🇩🇪 Germany</option>
+          <option value="Australia">🇦🇺 Australia</option>
+          <option value="Spain">🇪🇸 Spain</option>
+          <option value="Saudi Arabia">🇸🇦 Saudi Arabia</option>
+          <option value="UAE">🇦🇪 UAE</option>
+          <option value="Italy">🇮🇹 Italy</option>
+        </select><br><br>
+
+
+
+
+    <label for="">Choose Shipping Type</label><br>
+    <select required name="shipping">
+      <option value="" disabled selected>-- Select Type --</option>
+      <option value="Home">🏠 Home</option>
+      <option value="Office">🏢 Office</option>
+      <option value="Other">📍 Other</option>
+    </select><br><br>
+
+  
+    <label>The Address is Detailed</label><br>
+    <textarea name="notes" rows="3" minlength="10" required></textarea><br><br>
+  <div><h3>🌍 We ship to Germany, France, Netherlands and more. Orders from Germany are processed with priority.
+  </h3>
+<p>✅ 30-Day Money-Back Guarantee.
+  🔒 Secure Checkout & Customer Support.
+  🚚 Fast Delivery Available to EU Countries.</p>
+</div>
+    <button type="submit" style="padding: 10px 20px; font-size: 16px; background: #007bff; color: white; border: none; border-radius: 5px;">Send Order</button>
+    
+
+  </form>
+  
+  
+  <script>
+    const container = document.getElementById("productContainer");
+    const totalAmount = document.getElementById("totalAmount");
+
+    const products = JSON.parse(localStorage.getItem("productList")) || [];
+    let total = 0;
+
+    products.forEach(p => {
+      const lineTotal = p.price * p.qty;
+      total += lineTotal;
+
+      const productEl = document.createElement("div");
+      productEl.className = "product";
+      productEl.innerHTML = `
+        <div class="product-info">
+          <img src="${p.img}" alt="${p.name}" />
+          <div>
+            <div class="product-name">${p.name}</div>
+            <div class="product-price">Price: $${p.price.toFixed(2)}</div>
+            <div class="product-qty">Quantity: ${p.qty}</div>
+          </div>
+        </div>
+        <div class="line-total">$${lineTotal.toFixed(2)}</div>
+      `;
+      container.appendChild(productEl);
+    });
+
+    totalAmount.textContent = total.toFixed(2);
+    
+    const summaryInput = document.getElementById("orderSummary");
+let summaryText = "";
+
+products.forEach(p => {
+  if (p.qty > 0) {
+    summaryText += `• ${p.name} - Qty: ${p.qty} - $${p.price.toFixed(2)}\\n`;
+  }
+});
+
+summaryText += `\\nTotal: $${total.toFixed(2)}`;
+summaryInput.value = summaryText;
+
+  </script>
+  
+
+</body>
+</html>
+
